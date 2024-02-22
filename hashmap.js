@@ -95,4 +95,22 @@ class Hashmap {
       return false;
     }
   }
+
+  length() {
+    let number = 0;
+    for (let i = 0; i < this.array.length; i++) {
+      let currentNode = this.array[i];
+      while (currentNode !== null) {
+        number++;
+        currentNode = currentNode.next;
+      }
+    }
+    return number;
+  }
+
+  clear() {
+    for (let i = 0; i < this.array.length; i++) {
+      this.array[i] = null;
+    }
+  }
 }
