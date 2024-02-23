@@ -113,4 +113,40 @@ class Hashmap {
       this.array[i] = null;
     }
   }
+
+  keys() {
+    let array = [];
+    for (let i = 0; i < this.array.length; i++) {
+      let currentNode = this.array[i];
+      while (currentNode !== null) {
+        array.push(currentNode.key);
+        currentNode = currentNode.next;
+      }
+    }
+    return array;
+  }
+
+  values() {
+    let array = [];
+    for (let i = 0; i < this.array.length; i++) {
+      let currentNode = this.array[i];
+      while (currentNode !== null) {
+        array.push(currentNode.value);
+        currentNode = currentNode.next;
+      }
+    }
+    return array;
+  }
+
+  entries() {
+    let array = [];
+    for (let i = 0; i < this.array.length; i++) {
+      let currentNode = this.array[i];
+      while (currentNode !== null) {
+        array.push(`[${currentNode.key}, ${currentNode.value}]`);
+        currentNode = currentNode.next;
+      }
+    }
+    return array;
+  }
 }
